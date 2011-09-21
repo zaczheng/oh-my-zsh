@@ -24,11 +24,37 @@ ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bundler github osx rails3 ruby)
+plugins=(git bundler github osx ruby)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+unsetopt correct_all
+alias rs='source ~/.zshrc' # 'reload shell'
+alias es='vi ~/.zshrc; source ~/.zshrc'
+
+# Homebrew
 export GEM_HOME='/usr/local/Cellar/gems/1.8'
+
+# rbenv
 export PATH="$HOME/bin:$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+### Aliases
+
+# Common
+alias c='cat'
+
+# Dev
+alias r='rails'
+
+# SVN
+alias s='svn'
+alias st='svn status'
+alias sc='svn commit'
+
+# Frequent directories
+alias cdp='cd ~/code/ports/rails30' # mapped to 'currrent' project'
+
+### Functions
+cd() { builtin pushd $@ && ls -haF }

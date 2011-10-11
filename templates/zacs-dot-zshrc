@@ -59,6 +59,9 @@ alias sc='svn commit -m'
 alias si='svn propedit svn:ignore .'
 alias su='svn up'
 
+# Git
+alias gf='git diff'
+
 # Frequent directories
 alias cdp='cd ~/code/ports/rails30' # mapped to 'currrent' project'
 
